@@ -37,7 +37,7 @@ class _ProfileScreenState extends SfWidget {
     return const MaterialApp(
       title: 'Video Demo',
       home: Scaffold(
-        body: Text('Video Demo'),
+        body: Center(child: Text('Video Demo'),),
       ),
     );
   }
