@@ -17,7 +17,8 @@ mixin _$AppStore on _AppStoreBase, Store {
               name: '_AppStoreBase.isAppSettingsLoaded'))
       .value;
 
-  final _$languageAtom = Atom(name: '_AppStoreBase.language');
+  late final _$languageAtom =
+      Atom(name: '_AppStoreBase.language', context: context);
 
   @override
   LanguageModel? get language {
@@ -32,7 +33,7 @@ mixin _$AppStore on _AppStoreBase, Store {
     });
   }
 
-  final _$themeAtom = Atom(name: '_AppStoreBase.theme');
+  late final _$themeAtom = Atom(name: '_AppStoreBase.theme', context: context);
 
   @override
   ThemeModel? get theme {
@@ -47,8 +48,8 @@ mixin _$AppStore on _AppStoreBase, Store {
     });
   }
 
-  final _$setAppLanguageAsyncAction =
-      AsyncAction('_AppStoreBase.setAppLanguage');
+  late final _$setAppLanguageAsyncAction =
+      AsyncAction('_AppStoreBase.setAppLanguage', context: context);
 
   @override
   Future<void> setAppLanguage(
@@ -57,22 +58,24 @@ mixin _$AppStore on _AppStoreBase, Store {
         .run(() => super.setAppLanguage(context, languageData));
   }
 
-  final _$getAppLanguageAsyncAction =
-      AsyncAction('_AppStoreBase.getAppLanguage');
+  late final _$getAppLanguageAsyncAction =
+      AsyncAction('_AppStoreBase.getAppLanguage', context: context);
 
   @override
   Future<void> getAppLanguage() {
     return _$getAppLanguageAsyncAction.run(() => super.getAppLanguage());
   }
 
-  final _$setAppThemeAsyncAction = AsyncAction('_AppStoreBase.setAppTheme');
+  late final _$setAppThemeAsyncAction =
+      AsyncAction('_AppStoreBase.setAppTheme', context: context);
 
   @override
   Future<void> setAppTheme(BuildContext context, ThemeModel data) {
     return _$setAppThemeAsyncAction.run(() => super.setAppTheme(context, data));
   }
 
-  final _$getAppThemeAsyncAction = AsyncAction('_AppStoreBase.getAppTheme');
+  late final _$getAppThemeAsyncAction =
+      AsyncAction('_AppStoreBase.getAppTheme', context: context);
 
   @override
   Future<void> getAppTheme() {
